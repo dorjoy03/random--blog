@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Result{% endblock title %}
+
+{% block content %}
+<ul>
+  {% for post in posts %}
+  <li>
+    no. of matches: {{ post.count }}<br />
+    matches: 
+    {% for match in post.matches %}
+    - {{ match }}
+    {% endfor %}
+    <br />
+    {{ post.owner }}<br />
+    {{ post.date_added|date:'M d, Y H:i' }}<br />
+    {{ post.text|linebreaks }}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}

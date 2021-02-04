@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Feed{% endblock title %}
+
+{% block content %}
+<br />
+<br />
+<form action="{% url 'search' %}" method="get">
+  <input name="q" type="text">
+  <button type="submit">Search</button>
+</form>
+<ul>
+  {% for post in posts %}
+  <li>
+    {{ post.owner }}<br />
+    {{ post.date_added|date:'M d, Y H:i' }}<br />
+    {{ post.text|linebreaks }}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}
+    
+  

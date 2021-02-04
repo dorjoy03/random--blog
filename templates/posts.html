@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock title %}
+
+{% block content %}
+<ul>
+  {% for post in owner_posts %}
+  <li>
+    {{ post.date_added|date:'M d, Y H:i' }}<br />
+    {{ post.text|linebreaks }}
+    <a href="{% url 'edit_post' post.id %}">Edit Post</a>
+  </li>
+  <br />
+  {% endfor %}
+</ul>
+{% endblock content %}
