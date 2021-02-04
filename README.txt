@@ -12,3 +12,5 @@ The main feature is that the homepage always shows random posts from the data-
 base. Every time you refresh it will show posts randomly from the database.
 
 That's pretty much it.
+
+website: https://random--blog.herokuapp.com/
